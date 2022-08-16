@@ -1,6 +1,7 @@
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
+const path = require("path");
 const bodyParser = require("body-parser");
 const { urlencoded } = require("express");
 const bcrypt = require("bcrypt");
