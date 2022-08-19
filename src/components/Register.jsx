@@ -26,7 +26,7 @@ function Register() {
       setError("Password fields do not match. Please try again.");
       return;
     } else {
-      Axios.post("http://localhost:3001/register", {
+      Axios.post("http://localhost:8080/register", {
         username: username,
         email: email,
         password: password,

@@ -9,7 +9,7 @@ require("dotenv").config();
 
 const server = express();
 
-server.use(express.static(path.resolve(__dirname, '../client/build')));
+server.use(express.static(path.resolve(__dirname, "../client/build")));
 server.use(
   cors({
     origin: true,
@@ -20,11 +20,18 @@ server.use(
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(express.json());
 
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
   host: process.env.DEV_DATABASE_HOST,
   user: process.env.DEV_DATABASE_USER,
   database: process.env.DEV_DATABASE,
   password: process.env.DEV_DATABASE_PASS,
+});*/
+
+const db = mysql.createConnection({
+  host: process.env.PROD_DATABASE_HOST,
+  user: process.env.PROD_DATABASE_USER,
+  database: process.env.PROD_DATABASE,
+  password: process.env.PROD_DATABASE_PASS,
 });
 
 db.connect((err) => {
@@ -46,11 +53,21 @@ server.get("/create_database", (req, res) => {
 
 server.get("/create_table", (req, res) => {
   let sql =
-    "CREATE TABLE Users (UserId INT AUTO_INCREMENT, Username VARCHAR(255), Password VARCHAR(255), PRIMARY KEY (UserId))";
+    "CREATE TABLE Users (UserId INT AUTO_INCREMENT, Username VARCHAR(255), Email VARCHAR(255), Password VARCHAR(255), PRIMARY KEY (UserId))";
   db.query(sql, (err, result) => {
     if (err) throw err;
     else {
       console.log("Created table:", result);
+    }
+  });
+});
+
+server.get("/get_data", (req, res) => {
+  let sql = "SELECT * FROM Users";
+  db.query(sql, (err, result) => {
+    if (err) throw err;
+    else {
+      res.send(result);
     }
   });
 });
