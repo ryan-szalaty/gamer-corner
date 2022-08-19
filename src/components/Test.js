@@ -6,7 +6,7 @@ function Test() {
 
   Axios.defaults.withCredentials = true;
 
-  Axios.get("http://localhost:8080/get_data").then((response) => {
+  Axios.get("https://localhost:8080/get_data").then((response) => {
     setData(response.data);
   });
 
