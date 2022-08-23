@@ -26,17 +26,15 @@ function Register() {
       setError("Password fields do not match. Please try again.");
       return;
     } else {
-      useEffect(() => {
-        Axios.post("https://gamer-corner.herokuapp.com/register", {
-          username: username,
-          email: email,
-          password: password,
-          confirmPasssword: confirmPasssword,
-        }).then((response) => {
-          console.log(response);
-        });
-        setError(`Successful registration. Welcome, ${username}`);
+      Axios.post("https://gamer-corner.herokuapp.com/register", {
+        username: username,
+        email: email,
+        password: password,
+        confirmPasssword: confirmPasssword,
+      }).then((response) => {
+        console.log(response);
       });
+      setError(`Successful registration. Welcome, ${username}`);
     }
   };
 
