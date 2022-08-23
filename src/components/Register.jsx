@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Axios from "axios";
 
 function Register() {
@@ -26,15 +26,17 @@ function Register() {
       setError("Password fields do not match. Please try again.");
       return;
     } else {
-      Axios.post("https://localhost:8080/register", {
-        username: username,
-        email: email,
-        password: password,
-        confirmPasssword: confirmPasssword,
-      }).then((response) => {
-        console.log(response);
+      useEffect(() => {
+        Axios.post("https://gamer-corner.herokuapp.com/register", {
+          username: username,
+          email: email,
+          password: password,
+          confirmPasssword: confirmPasssword,
+        }).then((response) => {
+          console.log(response);
+        });
+        setError(`Successful registration. Welcome, ${username}`);
       });
-      setError(`Successful registration. Welcome, ${username}`);
     }
   };
 

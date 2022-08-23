@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Axios from "axios";
 
 function Test() {
@@ -6,17 +6,21 @@ function Test() {
 
   Axios.defaults.withCredentials = true;
 
-  Axios.get("https://localhost:8080/get_data").then((response) => {
-    setData(response.data);
+  useEffect(() => {
+    Axios.get("https://gamer-corner.herokuapp.com/get_data").then((response) => {
+      setData(response.data);
+    });
   });
 
   return (
     <div>
       {data.map((user) => {
         return (
-            <li key={user.id}>{user.Username}, {user.Email}</li>
-        )
-    })}
+          <li key={user.id}>
+            {user.Username}, {user.Email}
+          </li>
+        );
+      })}
     </div>
   );
 }
