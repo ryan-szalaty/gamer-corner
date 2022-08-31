@@ -40,49 +40,54 @@ function Register() {
   };
 
   return (
-    <form className="form neonBorderPurple">
+    <form className="neonBorderPurple">
       <h1 className="neonTextPurple">Register New User</h1>
 
-      <div className="form-field">
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          onChange={(event) => setUsername(event.target.value)}
-        />
-      </div>
+      <div className="form-field-area">
+        <div className="form-field">
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            onChange={(event) => setUsername(event.target.value)}
+          />
+        </div>
 
-      <div className="form-field">
-        <label htmlFor="email">Email</label>
-        <input
-          type="text"
-          name="email"
-          onChange={(event) => setEmail(event.target.value)}
-        />
-      </div>
+        <div className="form-field">
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </div>
 
-      <div className="form-field">
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          onChange={(event) => setPassword(event.target.value)}
-        />
-      </div>
+        <div className="form-field">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </div>
 
-      <div className="form-field">
-        <label htmlFor="confirmPassword">Confirm Password</label>
-        <input
-          type="password"
-          name="confirmPasssword"
-          onChange={(event) => setConfirmPassword(event.target.value)}
-        />
+        <div className="form-field">
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            name="confirmPasssword"
+            onChange={(event) => setConfirmPassword(event.target.value)}
+          />
+        </div>
       </div>
 
       <div className="submitButton">
-        <button className="neonButtonPurple"
-          onClick={() =>
+        <button
+          className="neonButtonPurple"
+          onClick={(event) => {
+            event.preventDefault();
             sendUserInfo(username, email, password, confirmPassword)
+          } 
           }
         >
           Register

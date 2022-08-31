@@ -1,23 +1,73 @@
 body {
-  font-size: 18px;
-  font-weight: 1.5;
-  line-height: 1.5;
   background-color: black;
-  margin: 0;
   color: white;
   width: 100%;
+  font-size: 1.1rem;
+}
+
+form {
+  margin: 5% auto;
+  width: 75%;
+}
+
+.form-field-area {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.form-field {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 5%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
-.form {
-  width: 95%;
+.form-field input {
+  margin-top: 5%;
+  padding: 10px;
+  border-radius: 2rem;
+  border: solid 2px white;
+  color: white;
+  font-size: 1.1rem;
+  background-color: black;
+  opacity: 0.8;
 }
 
-.form-field .submitButton {
-  width: 100%;
-  height: auto;
+.form-field input:focus {
+  opacity: 1.0;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+}
+
+.form-field input:hover {
+  transition: 0.5s;
+  opacity: 1.0;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  cursor: pointer;
+}
+
+button {
+  width: 30%;
+  font-size: 1.1rem;
+  font-family: cursive;
+  opacity: 0.8;
+}
+
+button:hover {
+  transition: 0.5s;
+  opacity: 1;
+  cursor: pointer;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
+    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+}
+
+.errorSection {
+  font-size: 1.1rem;
+  color: white;
 }
 
 .neonBorderPurple {
@@ -43,10 +93,6 @@ body {
   border: 0.2rem solid #fff;
   border-radius: 2rem;
   padding: 0.4em;
-  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
-    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
-  font-family: cursive;
   color: #fff;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
-    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+  background-color: black;
 }
