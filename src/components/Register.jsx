@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Axios from "axios";
+import "../App.css";
 
 function Register() {
   const [username, setUsername] = useState([]);
@@ -39,8 +40,8 @@ function Register() {
   };
 
   return (
-    <div className="form">
-      <h1>Register New User</h1>
+    <form className="form neonBorderPurple">
+      <h1 className="neonTextPurple">Register New User</h1>
 
       <div className="form-field">
         <label htmlFor="username">Username</label>
@@ -79,7 +80,7 @@ function Register() {
       </div>
 
       <div className="submitButton">
-        <button
+        <button className="neonButtonPurple"
           onClick={() =>
             sendUserInfo(username, email, password, confirmPassword)
           }
@@ -89,7 +90,7 @@ function Register() {
       </div>
 
       <div className="errorSection">{error && <h2>{error}</h2>}</div>
-    </div>
+    </form>
   );
 }
 
