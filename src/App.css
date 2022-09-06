@@ -5,9 +5,61 @@ body {
   font-size: 1.1rem;
 }
 
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 5px white;
+  padding: 0px 20px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.navbarLeft {
+  margin-left: 2%;
+  font-size: 1.2rem;
+}
+
+.navbarRight {
+  overflow: hidden;
+  position: relative;
+}
+
+.navbarRight a {
+  color: white;
+  padding: 0.7em;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+}
+
+.navbarRight a:hover {
+  transition: 0.5s;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #77ede3,
+    0 0 82px #77ede3, 0 0 92px #77ede3, 0 0 102px #77ede3, 0 0 151px #77ede3;
+}
+
+.navbarRight .links {
+  display: none;
+}
+
+.hamburgerIcon {
+  margin-top: -10px;
+}
+
+.hamburgerBottom, .hamburgerMiddle{
+  margin-top: -5px;
+}
+
+.hamburgerIcon p {
+  font-size: 1.1rem;
+  line-height: 0px;
+}
+
 form {
   margin: 5% auto;
-  width: 75%;
+  width: 85%;
 }
 
 .form-field-area {
@@ -68,6 +120,30 @@ button:hover {
 .errorSection {
   font-size: 1.1rem;
   color: white;
+}
+
+.neonBorderGreen {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  padding: 0.4em;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #77ede3,
+    0 0 0.8rem #77ede3, 0 0 2.8rem #77ede3, inset 0 0 1.3rem #77ede3;
+}
+
+.neonTextGreen {
+  font-family: cursive;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #77ede3,
+    0 0 82px #77ede3, 0 0 92px #77ede3, 0 0 102px #77ede3, 0 0 151px #77ede3;
+}
+
+.neonIconGreen {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #77ede3,
+    0 0 82px #77ede3, 0 0 92px #77ede3, 0 0 102px #77ede3, 0 0 151px #77ede3;
 }
 
 .neonBorderPurple {

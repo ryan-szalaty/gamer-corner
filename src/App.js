@@ -1,9 +1,13 @@
 import "./App.css";
+import Navigation from "./components/Navigation";
+import Homepage from "./components/Homepage";
 import Register from "./components/Register";
 
 function App() {
   return (
     <div className="App">
+      <Navigation />
+      <Homepage />
       <Register />
     </div>
   );
