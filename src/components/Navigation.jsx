@@ -4,10 +4,10 @@ import "../App.css";
 function Navigation() {
   const displayMenu = () => {
     const menu = document.getElementById("links");
-    if (menu.style.display === "none") {
-      menu.style.display = "block";
-    } else {
+    if (menu.style.display === "block") {
       menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
     }
   };
   return (
@@ -17,7 +17,7 @@ function Navigation() {
       </section>
 
       <section className="navbarRight">
-        <a href="#icon" className="neonIconGreen" onClick={() => displayMenu()}>
+        <a href="#icon" className="neonIconGreen" onClick={displayMenu}>
           <div className="hamburgerIcon">
             <p className="hamburderTop">___</p>
             <p className="hamburgerMiddle">___</p>
